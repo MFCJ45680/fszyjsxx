@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>富顺职业技术学校 - 省级重点中职学校</title>
+    <link rel="icon" href="ico.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a5fb4;
+            --secondary: #e6a700;
+            --accent: #26a269;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d3b6c 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 65px;
+            width: 65px;
+            margin-right: 15px;
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            background-color: white;
+            object-fit: cover;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a i {
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 60%;
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: #ffb800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(26, 95, 180, 0.4) 0%, rgba(13, 59, 108, 0.7) 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h2 {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .btn-primary:hover, .btn-outline:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: #0d4a8c;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--secondary);
+        }
+        
+        /* 快速导航 */
+        .quick-nav {
+            background-color: white;
+            padding: 40px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quick-nav-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        
+        .nav-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--primary);
+            transition: height 0.4s ease;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .nav-card:hover::before {
+            height: 100%;
+        }
+        
+        .nav-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-card:hover i {
+            transform: scale(1.2);
+            color: var(--secondary);
+        }
+        
+        .nav-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-card a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-card:hover a {
+            color: var(--dark);
+        }
+        
+        .nav-card a i {
+            font-size: 0.9rem;
+            margin-left: 8px;
+            color: inherit;
+        }
+        
+        /* 学校概况 */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--secondary);
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 750px;
+            margin: 20px auto 0;
+            line-height: 1.7;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            background-color: #f1f7ff;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #e6f0ff 0%, #d4e4ff 100%);
+        }
+        
+        .stat-item .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .stat-item .label {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: relative;
+            height: 450px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* 专业设置 */
+        .majors {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+        
+        .majors::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, white, #f8f9fa);
+            z-index: 0;
+        }
+        
+        .section-title h2 {
+            position: relative;
+        }
+        
+        .majors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .major-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .major-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .major-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .major-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .major-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d3b6c 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .major-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+        
+        .major-header h3 {
+            font-size: 1.6rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .major-body {
+            padding: 30px;
+        }
+        
+        .major-body p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .major-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .major-features li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            transition: padding 0.3s ease;
+        }
+        
+        .major-features li:hover {
+            padding-left: 10px;
+        }
+        
+        .major-features li i {
+            color: var(--accent);
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .major-footer {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+        
+        /* 师资力量 */
+        .faculty {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .faculty-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 35px;
+        }
+        
+        .teacher-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .teacher-image {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .teacher-image::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            z-index: 1;
+        }
+        
+        .teacher-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .teacher-card:hover .teacher-image img {
+            transform: scale(1.1);
+        }
+        
+        .teacher-info {
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .teacher-info h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+        }
+        
+        .teacher-info .title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1.1rem;
+        }
+        
+        .teacher-info p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* 招生就业 */
+        .admission {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a5fb4 0%, #0d3b6c 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admission::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+        
+        .admission-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .admission-text h3 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .admission-text p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        .admission-list {
+            list-style: none;
+            margin: 40px 0;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 35px;
+            border-radius: 15px;
+            max-width: 700px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .admission-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .admission-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .admission-list li i {
+            color: var(--secondary);
+            margin-right: 15px;
+            font-size: 1.4rem;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .video-promo {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            max-width: 700px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 100%;
+        }
+        
+        .video-promo h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-promo h3 i {
+            margin-right: 10px;
+        }
+        
+        .video-promo p {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-thumbnail:hover img {
+            transform: scale(1.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .play-button i {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-left: 5px;
+        }
+        
+        .video-thumbnail:hover .play-button {
+            background: var(--primary);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-thumbnail:hover .play-button i {
+            color: white;
+        }
+        
+        /* 底部 */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .contact-list {
+            list-style: none;
+        }
+        
+        .contact-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.6;
+        }
+        
+        .contact-list li i {
+            color: var(--secondary);
+            margin-right: 15px;
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 15px;
+        }
+        
+        .quick-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .quick-links a:hover {
+            color: var(--secondary);
+            transform: translateX(8px);
+        }
+        
+        .quick-links a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        /* 圆形校徽区域 */
+        .badge-section {
+            background: linear-gradient(135deg, #0d3b6c 0%, #1a5fb4 100%);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .badge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .school-badge {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            border: 5px solid var(--secondary);
+            overflow: hidden;
+        }
+        
+        .school-badge img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+        
+        .badge-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .badge-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .badge-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .hero h2 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            nav ul li {
+                margin: 8px;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn-primary, .btn-outline {
+                width: 90%;
+                max-width: 350px;
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .admission-text h3 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title p {
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .admission-list {
+                padding: 20px;
+            }
+            
+            .admission-list li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="ico.png" alt="富顺职业技术学校校徽">
+                <div class="logo-text">
+                    <h1>富顺职业技术学校</h1>
+                    <p>省级重点中等职业学校</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> 首页</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> 学校概况</a></li>
+                    <li><a href="#majors"><i class="fas fa-book"></i> 专业设置</a></li>
+                    <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> 师资力量</a></li>
+                    <li><a href="#admission"><i class="fas fa-graduation-cap"></i> 招生就业</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> 新闻动态</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="tel:0813-7205310" class="cta-button"><i class="fas fa-phone-alt"></i> 招生咨询</a>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>培养技能人才 · 服务地方经济</h2>
+            <p>省级重点中等职业学校 · 国家级足球示范学校 · 连续7年自贡市教学质量一等奖</p>
+            <div class="hero-buttons">
+                <a href="#admission" class="btn-primary"><i class="fas fa-book-open"></i> 查看招生简章</a>
+                <a href="#" class="btn-outline"><i class="fas fa-map-marker-alt"></i> 校园VR全景</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 圆形校徽展示区 -->
+    <section class="badge-section">
+        <div class="container badge-container">
+            <div class="school-badge">
+                <img src="ico.png" alt="富顺职业技术学校校徽">
+            </div>
+            <div class="badge-text">
+                <h3>厚德强技 · 知行合一</h3>
+                <p>富顺职业技术学校秉承"厚德强技、知行合一"的校训，以培养高素质技术技能人才为己任，致力于服务地方经济社会发展。学校以省级示范专业为引领，构建了完善的现代职业教育体系。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速导航 -->
+    <section class="quick-nav">
+        <div class="container quick-nav-container">
+            <div class="nav-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>招生计划</h3>
+                <a href="#admission">查看2025年招生计划 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="nav-card">
+                <i class="fas fa-book"></i>
+                <h3>专业设置</h3>
+                <a href="#majors">六大专业部介绍 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="nav-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>升学就业</h3>
+                <a href="#">升学率与就业保障 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="nav-card">
+                <i class="fas fa-laptop"></i>
+                <h3>校园生活</h3>
+                <a href="#">学生活动与社团 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学校概况 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>学校概况</h2>
+                <p>省级重点中职学校，2018年入选四川省示范中职建设计划，整合5所院校资源</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>富顺职业技术学校简介</h3>
+                    <p>富顺职业技术学校成立于2013年6月，由原福源灏职业中学、富顺县技工学校等五所院校整合而成。学校占地162亩（含新增60亩），建筑面积4万㎡，现有教职工305人，学生6100余人，136个教学班。</p>
+                    <p>学校以"厚德强技、知行合一"为校训，坚持"服务发展、促进就业"的办学方向，构建了多层次、多形式、多规格的办学格局，形成了鲜明的职业教育特色。</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="number">6100+</div>
+                            <div class="label">在校学生</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">305</div>
+                            <div class="label">教职工</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">136</div>
+                            <div class="label">教学班级</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">100+</div>
+                            <div class="label">合作企业</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn-primary"><i class="fas fa-history"></i> 查看历史沿革</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="富顺职业技术学校校园">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业设置 -->
+    <section class="majors" id="majors">
+        <div class="container">
+            <div class="section-title">
+                <h2>专业设置</h2>
+                <p>六大专业部协同发展，满足学生多元化发展需求</p>
+            </div>
+            <div class="majors-container">
+                <div class="major-card">
+                    <div class="major-header">
+                        <h3>建筑电子计算机</h3>
+                    </div>
+                    <div class="major-body">
+                        <p>重点发展建筑工程技术、电子技术应用和计算机应用专业，其中建筑工程施工专业为省级示范专业。</p>
+                        <ul class="major-features">
+                            <li><i class="fas fa-check-circle"></i> 建筑工程施工（省级示范）</li>
+                            <li><i class="fas fa-check-circle"></i> 建筑表现</li>
+                            <li><i class="fas fa-check-circle"></i> 电子技术应用</li>
+                            <li><i class="fas fa-check-circle"></i> 计算机应用</li>
+                            <li><i class="fas fa-check-circle"></i> 网络信息安全</li>
+                        </ul>
+                    </div>
+                    <div class="major-footer">
+                        <a href="#" class="btn-outline" style="border-color: var(--primary); color: var(--primary);">查看详情</a>
+                    </div>
+                </div>
+                
+                <div class="major-card">
+                    <div class="major-header">
+                        <h3>学前教育</h3>
+                    </div>
+                    <div class="major-body">
+                        <p>培养具备学前教育专业知识和技能的应用型人才，对口升学率高达97%。拥有现代化实训中心和省级示范教学团队。</p>
+                        <ul class="major-features">
+                            <li><i class="fas fa-check-circle"></i> 学前教育（升学方向）</li>
+                            <li><i class="fas fa-check-circle"></i> 幼儿保育</li>
+                            <li><i class="fas fa-check-circle"></i> 艺术教育</li>
+                            <li><i class="fas fa-check-circle"></i> 儿童发展指导</li>
+                            <li><i class="fas fa-check-circle"></i> 特殊儿童教育</li>
+                        </ul>
+                    </div>
+                    <div class="major-footer">
+                        <a href="#" class="btn-outline" style="border-color: var(--primary); color: var(--primary);">查看详情</a>
+                    </div>
+                </div>
+                
+                <div class="major-card">
+                    <div class="major-header">
+                        <h3>机电汽修化工</h3>
+                    </div>
+                    <div class="major-body">
+                        <p>现代学徒制试点专业，与多家知名企业合作培养技术技能人才。拥有价值2000万元的现代化实训设备。</p>
+                        <ul class="major-features">
+                            <li><i class="fas fa-check-circle"></i> 汽车运用与维修</li>
+                            <li><i class="fas fa-check-circle"></i> 机电技术应用</li>
+                            <li><i class="fas fa-check-circle"></i> 化工工艺</li>
+                            <li><i class="fas fa-check-circle"></i> 数控技术应用</li>
+                            <li><i class="fas fa-check-circle"></i> 工业机器人技术</li>
+                        </ul>
+                    </div>
+                    <div class="major-footer">
+                        <a href="#" class="btn-outline" style="border-color: var(--primary); color: var(--primary);">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 师资力量 -->
+    <section class="faculty" id="faculty">
+        <div class="container">
+            <div class="section-title">
+                <h2>师资力量</h2>
+                <p>高水平师资队伍，为学生成长保驾护航</p>
+            </div>
+            <div class="faculty-container">
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=377&q=80" alt="张明教授">
+                    </div>
+                    <div class="teacher-info">
+                        <h3>官忠华</h3>
+                        <span class="title">党委书记、校长</span>
+                        <p>南溪职高党委书记、校长</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="李华教授">
+                    </div>
+                    <div class="teacher-info">
+                        <h3>雷大利</h3>
+                        <span class="title">副校长</span>
+                        <p>富顺职高副校长</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80" alt="王芳教授">
+                    </div>
+                    <div class="teacher-info">
+                        <h3>李麒麟</h3>
+                        <span class="title">党委委员</span>
+                        <p>富顺职高党委委员</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="刘伟教授">
+                    </div>
+                    <div class="teacher-info">
+                        <h3>刘伟</h3>
+                        <span class="title">高级工程师/实训导师</span>
+                        <p>汽车维修专业特聘专家，拥有15年行业经验，企业技术总监。指导学生获全国技能大赛二等奖。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招生就业 -->
+    <section class="admission" id="admission">
+        <div class="container">
+            <div class="admission-content">
+                <div class="admission-text">
+                    <h3>2025年招生计划</h3>
+                    <p>富顺职业技术学校2025年招生工作已全面启动，欢迎广大学子报读！</p>
+                    
+                    <ul class="admission-list">
+                        <li><i class="fas fa-user-graduate"></i> <strong>招生对象：</strong>应届初中毕业生及同等学力者</li>
+                        <li><i class="fas fa-calendar-check"></i> <strong>报名时间：</strong>2025年3月1日-8月30日</li>
+                        <li><i class="fas fa-book-open"></i> <strong>热门专业：</strong>建筑工程施工、学前教育、汽车维修、航空服务</li>
+                        <li><i class="fas fa-graduation-cap"></i> <strong>升学通道：</strong>五年一贯制、对口高职高考</li>
+                        <li><i class="fas fa-hands-helping"></i> <strong>助学政策：</strong>免学费</li>
+                    </ul>
+                    
+                    <a href="https://www.bilibili.com/video/BV1GJ411x7h7" target="_blank" class="btn-primary"><i class="fas fa-download"></i> 下载招生简章</a>
+                </div>
+                
+                <div class="video-promo">
+                    <h3><i class="fas fa-video"></i> 招生宣传视频</h3>
+                    <p>点击下方视频了解富顺职业技术学校2025年招生详情</p>
+                    <div class="video-thumbnail" onclick="window.open('https://www.bilibili.com/video/BV1GJ411x7h7', '_blank')">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="招生宣传视频">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>四川省自贡市富顺县富世镇富州大道中段246号</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>招生热线：0813-7205310</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>邮箱：fszyjsxx@163.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>工作时间：周一至周五 8:00-17:30</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="quick-links">
+                        <li><a href="#about"><i class="fas fa-angle-right"></i> 学校简介</a></li>
+                        <li><a href="#majors"><i class="fas fa-angle-right"></i> 专业设置</a></li>
+                        <li><a href="#admission"><i class="fas fa-angle-right"></i> 招生信息</a></li>
+                        <li><a href="#faculty"><i class="fas fa-angle-right"></i> 师资力量</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> 就业服务</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> 校园风光</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <p>关注学校官方平台，获取最新校园资讯和招生信息</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 富顺职业技术学校 版权所有 | 蜀ICP备05114514号-1</p>
+                <p>学校官网：fszyjsxx.qzz.io | 技术支持：信息中心</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.background = 'var(--primary)';
+                    header.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.15)';
+                    header.style.padding = '10px 0';
+                } else {
+                    header.style.background = 'linear-gradient(135deg, var(--primary) 0%, #0d3b6c 100%)';
+                    header.style.boxShadow = 'var(--shadow)';
+                    header.style.padding = '15px 0';
+                }
+            });
+            
+            // 滚动动画
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察需要动画的元素
+            document.querySelectorAll('.section-title, .about-content, .majors-container, .faculty-container, .admission-content, .badge-container').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                observer.observe(el);
+            });
+            
+            // 圆形校徽动画
+            const badge = document.querySelector('.school-badge');
+            if (badge) {
+                badge.style.animation = 'pulse 2s ease infinite';
+            }
+        });
+    </script>
+</body>
+</html>
