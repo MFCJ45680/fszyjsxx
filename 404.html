@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面未找到 - 富顺职业技术学校</title>
+    <link rel="icon" href="ico.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a5fb4;
+            --secondary: #e6a700;
+            --accent: #26a269;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d3b6c 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: 60px;
+            margin-right: 15px;
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            background-color: white;
+            object-fit: cover;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        /* 错误内容区域 */
+        .error-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .error-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .error-illustration {
+            max-width: 400px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .error-illustration img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        }
+        
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d3b6c 100%);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0d4a8c 0%, #0a2f58 100%);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(26, 95, 180, 0.05);
+        }
+        
+        .suggestion-box {
+            background: #f1f7ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: left;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .suggestion-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .suggestion-title i {
+            margin-right: 10px;
+        }
+        
+        .suggestion-list {
+            list-style: none;
+        }
+        
+        .suggestion-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .suggestion-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        /* 底部 */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .contact-list {
+            list-style: none;
+        }
+        
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .quick-links {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 12px;
+        }
+        
+        .quick-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .quick-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .quick-links a i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* 动画 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .error-code {
+            animation: fadeIn 1s ease;
+        }
+        
+        .error-illustration {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 7rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            
+            .error-title {
+                font-size: 1.7rem;
+            }
+            
+            .error-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="ico.png" alt="富顺职业技术学校校徽">
+                <div class="logo-text">
+                    <h1>富顺职业技术学校</h1>
+                    <p>省级重点中等职业学校</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 错误内容 -->
+    <main class="error-container">
+        <div class="container">
+            <div class="error-content">
+                <div class="error-code">404</div>
+                <h2 class="error-title">哎呀！页面未找到</h2>
+                <p class="error-message">
+                    您访问的页面可能已被移除、更名或暂时不可用。<br>
+                    请检查您输入的网址是否正确，或使用下面的按钮返回首页。
+                </p>
+                
+                <div class="error-illustration">
+                    <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#1a5fb4" d="M423.5,218.9c-4.5-5.3-12.1-5.9-17.4-1.4c-5.3,4.5-5.9,12.1-1.4,17.4c4.5,5.3,12.1,5.9,17.4,1.4
+                            C427.4,231.8,428,224.2,423.5,218.9z"/>
+                        <path fill="#e6a700" d="M178.5,218.9c-4.5-5.3-12.1-5.9-17.4-1.4c-5.3,4.5-5.9,12.1-1.4,17.4c4.5,5.3,12.1,5.9,17.4,1.4
+                            C182.4,231.8,183,224.2,178.5,218.9z"/>
+                        <path fill="#f0f0f0" d="M300,102.9c-92.8,0-168.1,75.3-168.1,168.1S207.2,439.1,300,439.1s168.1-75.3,168.1-168.1S392.8,102.9,300,102.9z
+                             M300,405.8c-74.3,0-134.8-60.5-134.8-134.8S225.7,136.2,300,136.2s134.8,60.5,134.8,134.8S374.3,405.8,300,405.8z"/>
+                        <path fill="#1a5fb4" d="M300,121.2c82.8,0,149.8,67,149.8,149.8S382.8,420.8,300,420.8s-149.8-67-149.8-149.8S217.2,121.2,300,121.2
+                             M300,108.9c-89.5,0-162.1,72.6-162.1,162.1s72.6,162.1,162.1,162.1s162.1-72.6,162.1-162.1S389.5,108.9,300,108.9L300,108.9z"/>
+                        <path fill="#e6a700" d="M300,331.6c-34,0-61.6-27.6-61.6-61.6s27.6-61.6,61.6-61.6s61.6,27.6,61.6,61.6S334,331.6,300,331.6z"/>
+                        <path fill="#1a5fb4" d="M300,321.6c-28.4,0-51.6-23.2-51.6-51.6s23.2-51.6,51.6-51.6s51.6,23.2,51.6,51.6S328.4,321.6,300,321.6z"/>
+                        <path fill="#e6a700" d="M300,304.1c-18.8,0-34.1-15.3-34.1-34.1s15.3-34.1,34.1-34.1s34.1,15.3,34.1,34.1S318.8,304.1,300,304.1z"/>
+                        <path fill="#1a5fb4" d="M300,297.1c-15,0-27.1-12.2-27.1-27.1s12.2-27.1,27.1-27.1s27.1,12.2,27.1,27.1S315,297.1,300,297.1z"/>
+                        <path fill="#f0f0f0" d="M299.7,267.6c-1.4,0-2.5-1.1-2.5-2.5v-7.5c0-1.4,1.1-2.5,2.5-2.5c1.4,0,2.5,1.1,2.5,2.5v7.5
+                            C302.2,266.5,301.1,267.6,299.7,267.6z"/>
+                        <path fill="#1a5fb4" d="M238.8,170.7c-3.7-6.4-12-8.6-18.4-4.9c-6.4,3.7-8.6,12-4.9,18.4c3.7,6.4,12,8.6,18.4,4.9
+                            C240.3,185.4,242.5,177.1,238.8,170.7z"/>
+                        <path fill="#e6a700" d="M373.2,170.7c-3.7-6.4-12-8.6-18.4-4.9c-6.4,3.7-8.6,12-4.9,18.4c3.7,6.4,12,8.6,18.4,4.9
+                            C374.7,185.4,376.9,177.1,373.2,170.7z"/>
+                    </svg>
+                </div>
+                
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-home"></i> 返回首页
+                    </a>
+                    <a href="javascript:history.back()" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> 返回上一页
+                    </a>
+                </div>
+                
+                <div class="suggestion-box">
+                    <h3 class="suggestion-title"><i class="fas fa-lightbulb"></i> 您还可以尝试：</h3>
+                    <ul class="suggestion-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>检查网址拼写是否正确</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>访问我们的 <a href="/" style="color: var(--primary);">网站首页</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>浏览我们的 <a href="#majors" style="color: var(--primary);">专业设置</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>查看最新的 <a href="#admission" style="color: var(--primary);">招生信息</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>四川省自贡市富顺县富世镇富州大道中段246号</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>招生热线：0813-7205310</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>邮箱：fszyjsxx@163.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="quick-links">
+                        <li><a href="/"><i class="fas fa-angle-right"></i> 网站首页</a></li>
+                        <li><a href="#about"><i class="fas fa-angle-right"></i> 学校概况</a></li>
+                        <li><a href="#majors"><i class="fas fa-angle-right"></i> 专业设置</a></li>
+                        <li><a href="#admission"><i class="fas fa-angle-right"></i> 招生信息</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 富顺职业技术学校 版权所有 | 蜀ICP备05114514号-1</p>
+                <p>学校官网：www.fszyjsxx.cn | 技术支持：信息中心</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 添加简单的动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.error-title, .error-message, .suggestion-box');
+            
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'all 0.8s ease';
+                    
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
